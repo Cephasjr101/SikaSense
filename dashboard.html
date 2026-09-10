@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — SikaSense | Profit, Stock, Debts, MoMo & Tax</title>
+<meta name="description" content="Your business at a glance: daily profit, stock-out predictions, customer debts, MoMo reconciliation and GRA-ready tax reports.">
+<link rel="canonical" href="https://sikasense.example.com/dashboard.html">
+<meta name="theme-color" content="#0B3B2E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SikaSense">
+<meta property="og:title" content="Dashboard — SikaSense | Profit, Stock, Debts, MoMo & Tax">
+<meta property="og:description" content="Your business at a glance: daily profit, stock-out predictions, customer debts, MoMo reconciliation and GRA-ready tax reports.">
+<meta property="og:image" content="https://sikasense.example.com/assets/img/og-image.png">
+<meta property="og:url" content="https://sikasense.example.com/dashboard.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dashboard — SikaSense | Profit, Stock, Debts, MoMo & Tax">
+<meta name="twitter:description" content="Your business at a glance: daily profit, stock-out predictions, customer debts, MoMo reconciliation and GRA-ready tax reports.">
+<meta name="twitter:image" content="https://sikasense.example.com/assets/img/og-image.png">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="SikaSense home">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0B3B2E"/><circle cx="16" cy="16" r="9" fill="none" stroke="#FDE68A" stroke-width="2.4"/><path d="M16 11v10M13 14.5c0-1.4 6-2.2 6 0s-6 1.6-6 4 6 1.6 6 0" fill="none" stroke="#FDE68A" stroke-width="1.6" stroke-linecap="round"/></svg>
+      SikaSense
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="demo.html">Live Demo</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="invoice.html">Invoices</a></li>
+      <li><a class="btn btn-primary btn-sm" href="index.html#signup">Start Free</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+<section class="section" id="dashboard">
+  <div class="container">
+    <h1 style="color:var(--green-900);margin-bottom:0">Business Dashboard</h1>
+    <p class="sub">Everything SikaSense has tracked for your business — demo data pre-loaded, updated live when you record sales in the chat demo.</p>
+    <div class="kpi-row">
+      <div class="kpi"><strong id="kpi-revenue">—</strong><span>Revenue today</span></div>
+      <div class="kpi"><strong id="kpi-profit">—</strong><span>Profit today</span></div>
+      <div class="kpi"><strong id="kpi-debt">—</strong><span>Debts owed to you</span></div>
+      <div class="kpi"><strong id="kpi-stock">—</strong><span>Low-stock items</span></div>
+      <div class="kpi"><strong id="kpi-recon">—</strong><span>MoMo problems</span></div>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Dashboard sections">
+      <button class="tab" role="tab" data-tab="stock" aria-selected="true">Stock &amp; Predictions</button>
+      <button class="tab" role="tab" data-tab="debts" aria-selected="false">Customer Debts</button>
+      <button class="tab" role="tab" data-tab="recon" aria-selected="false">MoMo Reconciliation</button>
+      <button class="tab" role="tab" data-tab="tax" aria-selected="false">Tax &amp; Accounting</button>
+    </div>
+    <div class="panel active" id="panel-stock" role="tabpanel">
+      <div class="table-wrap"><table>
+        <thead><tr><th>Product</th><th>In stock</th><th>Avg daily sales</th><th>Runs out in</th><th>7-day runway</th><th>Suggested reorder</th></tr></thead>
+        <tbody id="stock-body"></tbody>
+      </table></div>
+      <p class="consent-note">Prediction = current stock ÷ average daily sales over the last 7 days. “Critical” = under 3 days of stock.</p>
+    </div>
+    <div class="panel" id="panel-debts" role="tabpanel">
+      <div class="table-wrap"><table>
+        <thead><tr><th>Customer</th><th>Amount owed</th><th>Owing since</th><th></th></tr></thead>
+        <tbody id="debt-body"></tbody>
+      </table></div>
+    </div>
+    <div class="panel" id="panel-recon" role="tabpanel">
+      <div class="table-wrap"><table>
+        <thead><tr><th>Reference</th><th>Date</th><th>Amount</th><th>MoMo fee</th><th>Status</th></tr></thead>
+        <tbody id="recon-body"></tbody>
+      </table></div>
+      <p class="consent-note">Every MoMo settlement is matched against a recorded sale by transaction reference. Unmatched items are flagged for review.</p>
+    </div>
+    <div class="panel" id="panel-tax" role="tabpanel">
+      <div class="table-wrap"><table><tbody id="tax-body"></tbody></table></div>
+      <p class="consent-note">Figures assume standard VAT of 15%. This report supports — but does not replace — filing with the Ghana Revenue Authority. Always confirm with your tax advisor.</p>
+      <button class="btn btn-primary no-print" onclick="window.print()">Print report</button>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>SikaSense</h4>
+        <p style="font-size:.9rem;max-width:40ch">The AI business manager for Ghanaian SMEs. Record sales by WhatsApp message or voice note — track profit, debts, stock, MoMo and taxes automatically.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="demo.html">Live WhatsApp Demo</a>
+        <a href="dashboard.html">Business Dashboard</a>
+        <a href="invoice.html">Invoice Generator</a>
+        <a href="index.html#signup">Start Free</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="404.html">Page Not Found (demo)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span data-year></span> SikaSense Ltd. All rights reserved. · Accra, Ghana</div>
+  </div>
+</footer>
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="container cookie-inner">
+    <p>We use cookies to keep SikaSense working and to measure traffic (see our <a href="privacy.html" style="color:#7FD6B6">Privacy Policy</a>). Analytics only load after you accept.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-primary btn-sm" data-consent="accepted">Accept cookies</button>
+      <button class="btn btn-ghost btn-sm" data-consent="declined" style="color:#fff;border-color:#7FD6B6">Decline</button>
+    </div>
+  </div>
+</div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sikasense.example.com/sitemap.xml
